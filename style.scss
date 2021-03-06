@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+html{
+    height: 100%;
+}
+$red-bg:red;
+$green-bg:green;
+$blue-bg:blue;
+$yellow-bg:yellow;
+$left-f:left;
+@mixin w-h {
+    width:33%;
+    height:200px;
+    
+}
+@mixin background($value) {
+    background: $value;
+    
+}
+
+.container{ width: 80%; margin: 10% auto;}
+
+%box-sec{
+    @include w-h;
+    float:$left-f;
+    &:hover{
+        background: $yellow-bg;
+    }
+}
+
+.first{
+    @include background($red-bg);
+    @extend %box-sec;
+    
+  
+}
+.second{
+    @include background($green-bg);
+    @extend %box-sec;
+     
+}
+.third{
+    @include background($blue-bg);
+    @extend %box-sec;
+  
+}
